@@ -20,7 +20,12 @@ const mapDispatchToProps = (dispatch) => ({
             git:inputArray[6].value,
             blog:inputArray[7].value
         };
-        dispatch(signUp(signUpInfo));
+        console.log(signUpInfo.sex);
+        if(signUpInfo.name === ''){
+            alert("用户名不能为空");
+        }else{
+            dispatch(signUp(signUpInfo));
+        }
     },
     onSavePathClick: () => {
         console.log("待定！！！,,,学习文件上传部分后完成");
