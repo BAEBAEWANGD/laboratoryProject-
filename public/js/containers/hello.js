@@ -7,11 +7,9 @@ const mapStateToProps = (state) => {
     }
 };
 const mapDispatchToProps = (dispatch,ownProps) => ({
-    // return {
         onDisplayHello: () => {
             dispatch(sayHello(ownProps.hello));
         }
-    // };
 });
 const PublishLink = connect(mapStateToProps, mapDispatchToProps)(Hello);
 export default　PublishLink;

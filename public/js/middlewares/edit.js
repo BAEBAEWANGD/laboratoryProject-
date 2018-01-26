@@ -9,14 +9,14 @@ export default store=>next=>action=> {
             .send(action)
             .end((err, res)=> {
                 if (err) {
-                    next({type: "ALL_LIST"})
+                    console.log(err);
                 }//添加更新文章之后改变列表
                 next({type: "ALL_LIST", data: res.body});
 
             });
     }
     if(action.type === 'ALL_LIST'){//改变列表的action
-        request.post('./editList')
+        request.post('/editList')
             .end((err,res) => {
                 if(err){
                     console.log(err);

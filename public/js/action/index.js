@@ -47,3 +47,13 @@ export const clearCheck = (check,text,title) => ({
     title:title,
     check:check
 });
+//注册action,信息携带为对象
+export const signUp = (signUpInfo) => ({
+    type:'SIGN_UP',
+    signUpInfo
+});
+//登录action
+export const signIn = (signInInfo) => ({
+    type:'SIGN_IN',
+    signInInfo
+});

@@ -3,10 +3,10 @@
  */
 'use strict';
 
-let express = require('express');
-let router = express.Router();
-let db = require('../dbs/connection');
-let editSQL = require('../dbs/editSQL');
+const express = require('express');
+const router = express.Router();
+const db = require('../dbs/connection');
+const editSQL = require('../dbs/editSQL');
 
 
 //增加更新
