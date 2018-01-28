@@ -12,7 +12,7 @@ function ItemUserList(props) {
     }else{
         sex = '男';
     }
-    return <tr onClick={props.onDetial}>
+    return <tr id={props.check} onClick={props.onDetial}>
         <td>{props.name}</td>
         <td>{props.major_class}</td>
         <td>{sex}</td>
@@ -20,6 +20,7 @@ function ItemUserList(props) {
         <td>{props.blog}</td>
         <td>{props.time}</td>
         <td>{props.count}</td>
+        <td><button id="delete" onClick={props.onDelete}>删除</button></td>
     </tr>
 }
 export default class Detail extends React.Component {
@@ -27,7 +28,7 @@ export default class Detail extends React.Component {
         this.props.allUserList();
     }
     render() {
-        const {onDetial,userList} = this.props;
+        const {onDetial,userList,onDelete} = this.props;
         return <div>
             <table id="table">
                 <tbody>
@@ -39,9 +40,10 @@ export default class Detail extends React.Component {
                         <th>blog地址</th>
                         <th>最新发布时间</th>
                         <th>发布文章总数</th>
+                        <th>是否移除</th>
                     </tr>
                     {userList.map((val)=>
-                        <ItemUserList key={val.stu_id} onDetial={onDetial} name={val.stu_name} major_class={val.major_class} sex={val.sex} github={val.github} blog={val.blog} time="" count=""/>
+                        <ItemUserList key={val.stu_id} check={val.stu_id} onDetial={onDetial} onDelete={onDelete} name={val.stu_name} major_class={val.major_class} sex={val.sex} github={val.github} blog={val.blog} time="" count=""/>
                     )}
                 </tbody>
             </table>

@@ -17,4 +17,28 @@ router.post('/userList', (req, res) => {
         res.json(result);
     });
 });
+router.post('/deleteList', (req, res) => {
+    const id = req.body.id;
+    db.query(signSQL.deleteStu, id, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+    db.query(signSQL.deleteUser, id, (err, result) => {
+        if(err){
+            console.log(err);
+        }
+    });
+    db.query(signSQL.deleteUser, id, (err, result) => {
+        if(err){
+            console.log(err);
+        }
+    });
+    db.query(signSQL.myAllStudent, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        res.json(result);
+    });
+});
 module.exports = router;

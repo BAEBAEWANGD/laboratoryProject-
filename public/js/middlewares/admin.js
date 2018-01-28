@@ -16,6 +16,16 @@ export default store=>next=>action=> {
     if(action.type === 'USER_DETAIL'){
         window.location.href = '/detail';
     }
+    if(action.type === 'USER_DELETE'){
+        request.post('/deleteList')
+            .send(action)
+            .end((err,res) => {
+                if(err){
+                    console.log(err);
+                }
+                next({type:"ALL_USER_LIST", data: res.body});
+            })
+    }
     else
         next(action);
 }

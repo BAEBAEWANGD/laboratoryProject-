@@ -7,7 +7,9 @@ const signSQL = {
     insertInfo:'insert into student(user_id,stu_name,sex,major_class,github,blog) values(?,?,?,?,?,?)',
     update:'UPDATE edit SET title=?,text=? where id=?',
     myAllUser:'select * from user',
-    myAllStudent:'select * from student'
+    myAllStudent:'select * from student',
+    deleteStu:'delete from student where stu_id=?',
+    deleteUser: 'delete from user where user_id=?'
 };
 
 module.exports = signSQL;
