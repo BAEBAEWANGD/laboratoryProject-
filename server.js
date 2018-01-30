@@ -15,6 +15,7 @@ const editDelete = require('./server/routers/deleteEdit');
 const signUp = require('./server/routers/signup');
 const signIn = require('./server/routers/login');
 const Admin = require('./server/routers/admin');
+const Setting = require('./server/routers/setting');
 
 const db_config = {
     host: 'localhost',
@@ -51,11 +52,17 @@ app.use('/',editDelete);
 app.use('/',signUp);
 app.use('/',signIn);
 app.use('/',Admin);
+app.use('/',Setting);
 
 app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
+// app.use('/', function (req, res) {
+//     console.log('hello');
+//     delete req.session.signInInfo;
+//     delete app.locals.signInInfo;
+// });
 app.listen(3000, () => {
     console.log('server start');
 });

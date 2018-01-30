@@ -22,6 +22,12 @@ const mapDispatchToProps = (dispatch) => ({
         e.stopPropagation();
         const id = e.target.parentNode.parentNode.id;
         dispatch({type:'USER_DELETE',id:id});
+    },
+    onChangeType: (e) => {
+        e.stopPropagation();
+        const id = e.target.parentNode.parentNode.id;
+        const classType = e.target.innerText;
+        dispatch({type:'TYPE_CHANGE',id:id,classType:classType});
     }
 });
 
