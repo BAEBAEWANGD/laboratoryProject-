@@ -2,7 +2,7 @@
  * Created by ubuntu on 18-1-25.
  */
 const signSQL = {
-    insert: 'insert into user(name,password) values(?,?)',
+    insert: 'insert into user(name,password,head_path) values(?,?,?)',
     findId: 'select * from user where name=?',
     insertInfo:'insert into student(user_id,stu_name,sex,major_class,github,blog) values(?,?,?,?,?,?)',
     updateUser:'UPDATE user SET name=?,password=? where user_id=?',

@@ -63,6 +63,12 @@ app.get("*", function (req, res) {
 //     delete req.session.signInInfo;
 //     delete app.locals.signInInfo;
 // });
+// app.get('/deleteSession', (req, res) => {
+//     console.log("清除session");
+//     delete req.session.signInInfo;
+//     delete app.locals.signInInfo;
+//     console.log(req.session.signInInfo);
+// });
 app.listen(3000, () => {
     console.log('server start');
 });

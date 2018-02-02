@@ -41,13 +41,15 @@ router.post('/signin', (req, res) => {
         }
     })
 });
-const app = new express();
 router.get('/deleteSession', (req, res) => {
-    console.log("清除session");
-    delete req.session.signInInfo;
-    delete app.locals.signInInfo;
-    console.log(req.session.signInInfo);
-    //res.json({data: "eee"});
+    if(req.session.signInInfo !== undefined){
+        console.log("清除session");
+        console.log(req.session.signInInfo);
+        req.session.destroy();
+        console.log(req.session);
+    }else{
+        console.log("不存在session");
+    }
 });
 
 module.exports = router;

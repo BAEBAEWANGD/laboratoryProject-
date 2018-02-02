@@ -4,6 +4,7 @@
 import React from 'react';
 import '../../css/sign.css';
 import PropTypes from 'prop-types';
+import FileInput from 'react-file-input';
 export default class Setting extends React.Component {
     componentDidMount(){
         this.props.userINFO();
@@ -19,7 +20,8 @@ export default class Setting extends React.Component {
                 <label htmlFor="password">密码：</label>
                 <input onChange={onChange} value={password} type="password" name="password" id="password" />
                 <br />
-                <div><img id="image" src={headPath} onClick={onSavePathClick} /></div>
+                <img id="image" src={headPath}/><br/>
+                <FileInput type="file" name="myImage" accept=".png,.gif,.jpg" placeholder="点击修改头像" onChange={onSavePathClick}/>
                 <label htmlFor="name">真实姓名：</label>
                 <input onChange={onChange} value={realName} type="text" name="realName" id="realName"/>
                 <br />
