@@ -5,7 +5,7 @@ const signSQL = {
     insert: 'insert into user(name,password,head_path) values(?,?,?)',
     findId: 'select * from user where name=?',
     insertInfo:'insert into student(user_id,stu_name,sex,major_class,github,blog) values(?,?,?,?,?,?)',
-    updateUser:'UPDATE user SET name=?,password=? where user_id=?',
+    updateUser:'UPDATE user SET name=?,password=?,head_path=? where user_id=?',
     updateStu: 'UPDATE student SET stu_name=?,sex=?,major_class=?,github=?,blog=? where stu_id=?',
     updateType: 'UPDATE user SET type=? where user_id=?',
     myAllUser:'select * from user',

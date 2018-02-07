@@ -47,6 +47,7 @@ router.post('/fixinfo', (req, res) => {
     console.log(req.body);
     const name = req.body.newInfo.name;
     const password = req.body.newInfo.password;
+    const headPath = req.body.newInfo.headPath;
     const realName = req.body.newInfo.realName;
     const major = req.body.newInfo.major;
     const id = req.body.newInfo.id;
@@ -63,7 +64,7 @@ router.post('/fixinfo', (req, res) => {
             console.log(err);
         }else{
             if(result.length === 0 || result[0].user_id === parseInt(id,10)){
-                db.query(signSQL.updateUser,[name,password,id], function (err, result) {
+                db.query(signSQL.updateUser,[name,password,headPath,id], function (err, result) {
                    if(err){
                        console.log(err);
                    }
